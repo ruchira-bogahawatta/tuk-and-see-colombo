@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ───────────────────────────────────────────── */
+@theme {
+  /* Brand colours */
+  --color-primary:       #0EA5E9;
+  --color-primary-dark:  #0284C7;
+  --color-accent:        #EA580C;
+  --color-accent-dark:   #C2410C;
+  --color-golden:        #FBBF24;
+  --color-brand-dark:    #0C4A6E;
+  --color-muted:         #64748B;
+  --color-surface:       #F0F9FF;
+  --color-warm:          #FFFBF5;
+
+  /* Typography */
+  --font-heading: var(--font-playfair);
+  --font-body:    var(--font-dmsans);
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFBF5;
+  color: #0C4A6E;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Heading utility — applies Playfair Display */
+.font-heading {
+  font-family: var(--font-heading), Georgia, serif;
+}
