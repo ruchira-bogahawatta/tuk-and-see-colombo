@@ -20,7 +20,7 @@
 
 /* ── Base ────────────────────────────────────────────────────── */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -33,4 +33,14 @@ body {
 /* Heading utility — applies Playfair Display */
 .font-heading {
   font-family: var(--font-heading), Georgia, serif;
+}
+
+/* Page transition — used by template.tsx */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.page-enter {
+  animation: page-enter 0.25s ease-out both;
 }

@@ -1,8 +1,12 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { WHATSAPP_NUMBER } from "@/data/tours";
 
 export default function WhatsAppFAB() {
+  const pathname = usePathname();
+  const isTourDetail = /^\/tours\/.+/.test(pathname);
+
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C+I%27d+like+to+enquire+about+a+Tuk+%26+See+Colombo+tour.`;
   return (
     <a
@@ -10,7 +14,9 @@ export default function WhatsAppFAB() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg transition-transform hover:scale-110 hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-300"
+      className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg transition-transform hover:scale-110 hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-300 ${
+        isTourDetail ? "hidden sm:flex" : "flex"
+      }`}
     >
       {/* Official WhatsApp logo mark */}
       <svg viewBox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
